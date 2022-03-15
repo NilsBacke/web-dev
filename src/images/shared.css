@@ -1,0 +1,54 @@
+.wd-margin-0 {
+    margin: 0;
+}
+
+.wd-background {
+    background-color: black;
+}
+
+.wd-container-borders {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+.wd-border-color {
+    border-color: rgb(47, 51, 54);
+}
+
+.wd-container {
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wd-grey {
+    color: grey;
+}
+
+.wd-primary {
+    color: rgb(29,161,242);
+}
+
+.wd-inactive {
+    color: rgb(110, 118, 125);
+}
+
+.wd-flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wd-margin-right {
+    margin-right: 12px;
+}
+
+.wd-border-top {
+    border-top: 1px solid #202327;
+}
+
+.wd-border-bottom {
+    border-bottom: 1px solid #202327;
+}
