@@ -1,8 +1,12 @@
+import React from "react";
+import TuitList from "../TuitList";
+import WhatsHappening from "./whats-happening";
+
 const HomeScreen = () => {
   return (
     <div>
-      <h2>Home</h2>
-      <h3>Tuit list</h3>
+      <WhatsHappening />
+      <TuitList />
     </div>
   );
 };
