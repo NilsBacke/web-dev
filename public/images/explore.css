@@ -1,0 +1,8 @@
+.wd-search-input:focus {
+  outline: 0px !important;
+}
+
+.wd-image-size {
+  width: 45px;
+  height: auto;
+}
