@@ -1,8 +1,22 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 // import "../../../vendors/bootstrap/css/bootstrap.min.css";
 // import "../../../vendors/fontawesome/css/all.min.css";
 
-const NavigationSidebar = ({ active = "explore" }) => {
+const NavigationSidebar = () => {
+  const location = useLocation();
+  let active = "";
+
+  console.log(location.pathname);
+  if (location.pathname === "/tuiter" || location.pathname === "/tuiter/") {
+    active = "home";
+  } else if (
+    location.pathname === "/tuiter/explore" ||
+    location.pathname === "/tuiter/explore/"
+  ) {
+    active = "explore";
+  }
+
   return (
     <>
       <div className="list-group">
@@ -10,23 +24,23 @@ const NavigationSidebar = ({ active = "explore" }) => {
           <i className="fa-brands fa-twitter"></i>
         </a>
       </div>
-      <a
-        href="home.html"
+      <Link
+        to="/tuiter"
         className={`list-group-item list-group-item-action
         ${active === "home" ? "active" : ""}`}
       >
         <i className="fa-solid fa-house"></i>
         <span className="d-none d-xl-inline">Home</span>
-      </a>
-      <a
-        href="explore.html"
+      </Link>
+      <Link
+        to="/tuiter/explore"
         className={`list-group-item list-group-item-action
         ${active === "explore" ? "active" : ""}`}
         aria-current="true"
       >
         <i className="fa-solid fa-hashtag"></i>
         <div className="d-none d-xl-inline">Explore</div>
-      </a>
+      </Link>
       <a
         href="notifications.html"
         className={`list-group-item list-group-item-action
