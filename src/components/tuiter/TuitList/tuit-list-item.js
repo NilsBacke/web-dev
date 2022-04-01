@@ -1,12 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import TuitStats from "../TuitStats/tuit-stats";
+import { deleteTuit, updateTuit } from "../actions/tuits-actions";
 
 export default function TuitListItem({ tuit }) {
   const dispatch = useDispatch();
-  const deleteTuit = (tuit) => {
-    dispatch({ type: "delete-tuit", tuit });
-  };
 
   return (
     <div className="wd-post wd-border-bottom">
@@ -24,12 +22,36 @@ export default function TuitListItem({ tuit }) {
             <span className="wd-post-handle">@{tuit.handle}</span>
           </span>
           <i
-            onClick={() => deleteTuit(tuit)}
+            onClick={() => deleteTuit(dispatch, tuit)}
             className="fas fa-remove fa-2x 
                   fa-pull-right"
           ></i>
         </div>
         <div className="wd-post-content">{tuit.tuit}</div>
+        <div>
+          Likes: {tuit.likes}
+          <i
+            onClick={() =>
+              updateTuit(dispatch, {
+                ...tuit,
+                likes: tuit.likes + 1,
+              })
+            }
+            className="far fa-thumbs-up ms-2"
+          ></i>
+        </div>
+        <div>
+          Dislikes: {tuit.dislikes}
+          <i
+            onClick={() =>
+              updateTuit(dispatch, {
+                ...tuit,
+                dislikes: tuit.dislikes + 1,
+              })
+            }
+            className="far fa-thumbs-down ms-2"
+          ></i>
+        </div>
         <img
           className="wd-post-image"
           width="504"
