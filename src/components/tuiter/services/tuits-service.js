@@ -14,10 +14,16 @@ export const findAllTuits = async () => {
 };
 export const deleteTuit = async (tuit) => {
   const response = await axios.delete(`${TUITS_API}/${tuit._id}`);
-  return response.data;
+  if (response.status !== 200) {
+    console.log("error!");
+  }
+  return tuit;
 };
 
 export const updateTuit = async (tuit) => {
   const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
-  return response.data;
+  if (response.status !== 200) {
+    console.log("error!");
+  }
+  return tuit;
 };

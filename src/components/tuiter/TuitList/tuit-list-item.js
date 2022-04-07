@@ -68,7 +68,7 @@ export default function TuitListItem({ tuit }) {
           <a href="/explore" className="wd-action-link">
             <span className="wd-action">
               <i className="fa-regular fa-comment wd-margin-right"></i>
-              {tuit.stats.comments}
+              {tuit?.stats?.comments ?? 0}
             </span>
           </a>
           <a href="/explore" className="wd-action-link">
