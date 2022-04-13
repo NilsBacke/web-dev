@@ -52,18 +52,22 @@ export default function TuitListItem({ tuit }) {
             className="far fa-thumbs-down ms-2"
           ></i>
         </div>
-        <img
-          className="wd-post-image"
-          width="504"
-          height="264"
-          src={tuit.attachments?.image ?? ""}
-          alt=""
-        />
-        <div className="wd-post-image-caption-container">
-          <div className="wd-post-image-caption-title">{tuit.title}</div>
-          <div className="wd-post-image-caption-subtitle">{tuit.title}</div>
-          <div className="wd-post-image-caption-subtitle">rt.com</div>
-        </div>
+        {!!tuit.attachments?.image && (
+          <img
+            className="wd-post-image"
+            width="504"
+            height="264"
+            src={tuit.attachments?.image ?? ""}
+            alt=""
+          />
+        )}
+        {!!tuit.title && (
+          <div className="wd-post-image-caption-container">
+            <div className="wd-post-image-caption-title">{tuit.title}</div>
+            <div className="wd-post-image-caption-subtitle">{tuit.title}</div>
+            <div className="wd-post-image-caption-subtitle">rt.com</div>
+          </div>
+        )}
         <div className="wd-actions-row">
           <a href="/explore" className="wd-action-link">
             <span className="wd-action">
